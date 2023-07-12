@@ -1,12 +1,13 @@
 const mongoose = require('mongoose')
 
-const AnimeSchema = new mongoose.Schema({
+const animeSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true
   },
   image: {
-    image_url: ""
+    type: String,
+    default: ''
   },
   genre: {
     type: String,
@@ -15,3 +16,5 @@ const AnimeSchema = new mongoose.Schema({
   
   
 })
+
+module.exports = mongoose.model('Anime', animeSchema)
